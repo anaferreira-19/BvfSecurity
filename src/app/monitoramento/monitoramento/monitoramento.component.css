@@ -1,0 +1,17 @@
+@media (min-width: 400px) {
+    .container {
+        width: 400px;
+        margin-right: 0 auto;
+    }
+}
+
+#map {
+    height: 450px;
+    margin-right: 600px;
+}
+
+.table-alertas-recentes {
+    float: right;
+}
+
+

@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="ui-g">
+        <div class="ui-g-4">
+            <h1 class="titulo-pesquisa">Alertas de Segurança - Pesquisa</h1>
+            <hr class="division-pesquisa-cliente">
+            <br />
+        </div>
+        <div class="ui-md-9">
+            <label class="nome-pesquisa-e">Código do Equipamento</label>
+            <input pInputText class="input-pesquisa-e" type="text">
+        </div>
+        <div class="ui-g-12">
+            <p-button label="Pesquisar" icon="pi pi-search"></p-button>
+        </div>
+    </div>
+
+    <div class="tabela">
+        <p-table>
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>#</th>
+                    <th>Equipamento</th>
+                    <th>Dia e Hora</th>
+                    <th>Opções</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-cli>
+                <tr>
+                    <td>{{cli.id}}</td>
+                    <td>{{cli.nome}}</td>
+                    <td>{{cli.telefone}}</td>
+                    <td class="coluna-opcoes">
+                        <a pButton icon="pi pi-pencil" pTooltip="Editar" tooltipPosition="top"></a>
+                        <button pButton icon="pi pi-trash" pTooltip="Excluir" tooltipPosition="top"></button>
+                    </td>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="emptymessage">
+                <tr>
+                    <td colspan="colspan-4">
+                        Nenhum alerta nos últimos 30 dias encontrados.
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>
+</div>

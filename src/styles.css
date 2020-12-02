@@ -1,1 +1,578 @@
-/* You can add global styles to this file, and also import other style files */
+/* Estilização --- Body */
+
+body {
+    margin: 0;
+    font-family: Impact, fantasy;
+    background-color: #16161d;
+}
+
+@media (min-width: 1280px) {
+    .container {
+        width: 1280px;
+        margin: 0 auto;
+    }
+}
+
+/* Estilização --- NavBar */
+
+.navbar {
+    overflow: hidden;
+
+    padding: 10px;
+    background-color: #000000;
+    opacity: 0.89;
+    box-shadow: inset 0 0 1em black, 0 0 1em black;
+}
+
+.nav-title {
+    color: #ffffff;
+    font-family: Impact, fantasy;
+    font-size: 35px;
+    display: inline;
+}
+
+.menu-item {
+    color: #ffffff;
+    font-family: Impact, fantasy;
+    margin-left: 120px;
+    font-size: 23px;
+    display: inline;
+}
+
+.menu-item a {
+    color: #c0bbb7;
+    text-decoration: none;
+}
+
+.menu-item a:hover {
+    color: #00ade2;
+}
+
+/*Estilização --- Dropdown*/
+
+.dropdown {
+    float: right;
+}
+
+.dropdown .drop-button {
+    font-size: 23px;
+    border: none;
+    outline: none;
+    color: #c0bbb7;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: Impact, fantasy;
+}
+
+.dropdown-content {
+    display: none;
+    background-color: #000000;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-content a {
+    float: none;
+    color: white;
+    background-color: #000000;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    font-family: Impact, fantasy;
+    z-index: 9998;
+}
+
+.dropdown-content a:hover {
+    color: white;
+    background-color: #03495e;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    font-family: Impact, fantasy;
+    overflow: visible;
+    z-index: 9999;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    background-color: #00ade2;
+    color: white;
+    box-shadow: 10px 5px 5px black;
+}
+
+/* PADRÃO PARA TODAS PÁGINAS*/
+.titulo-pesquisa {
+    font-family: Impact, fantasy;
+    font-weight: 100;
+    font-size: 35px;
+    color: #ffffff;
+    opacity: 0.89;
+}
+
+.input-pesquisa {
+    position: absolute;
+    left: 500px;
+    width: 550px;
+    border-radius: 50px;
+    height: 40px;
+}
+
+.input-pesquisa-cliente {
+    position: absolute;
+    left: 475px;
+    width: 575px;
+    border-radius: 50px;
+    height: 40px;
+}
+
+.input-pesquisa-e {
+    position: absolute;
+    left: 500px;
+    width: 500px;
+    border-radius: 50px;
+    height: 40px;
+}
+
+.tabela {
+    position: relative;
+    top: 30px;
+}
+
+.logo {
+    filter: invert(1);
+    margin-left: 36%;
+    width: 400px;
+}
+
+.titulo-inicial {
+    color: #ffffff;
+    font-family: Impact, fantasy;
+    font-size: 35px;
+    opacity: 0.7;
+    margin-left: 375px;
+    margin-top: 0px;
+}
+
+.button-posicionamento {
+    position: relative;
+    left: -300px;
+    top: 50px;
+    float: right;
+    right: 120px;
+    margin-top: -5px;
+}
+
+.button-retorno {
+    margin: -5px 12px 0px 0px;
+}
+
+/* Estilização --- CLIENTES ADMINISTRADORES (PESQUISA E CADASTRO DE DADOS) */
+
+.division-pesquisa-cliente {
+    margin-right: 755px;
+    height: 0.5px;
+    background-color: #ffffff;
+    margin-top: -30px;
+}
+
+.nome-pesquisa-cliente {
+    font-family: Impact, fantasy;
+    font-weight: 100;
+    font-size: 30px;
+    position: absolute;
+    left: 250px;
+    color: #ffffff;
+    opacity: 0.89;
+}
+
+.nome-pesquisa {
+    font-family: Impact, fantasy;
+    font-weight: 100;
+    font-size: 25px;
+    position: absolute;
+    left: 130px;
+    color: #ffffff;
+    opacity: 0.89;
+}
+
+.nome-pesquisa-e {
+    font-family: Impact, fantasy;
+    font-weight: 100;
+    font-size: 25px;
+    position: absolute;
+    left: 150px;
+    color: #ffffff;
+    opacity: 0.89;
+}
+
+.email-pesquisa {
+    position: relative;
+    top: 42px;
+    font-family: Impact, fantasy;
+    font-weight: 100;
+    font-size: 25px;
+    left: 93px;
+    color: #ffffff;
+    opacity: 0.89;
+}
+
+.senha-pesquisa {
+    position: relative;
+    top: 12px;
+    font-family: Impact, fantasy;
+    font-weight: 100;
+    font-size: 25px;
+    left: 500px;
+    color: #ffffff;
+    opacity: 0.89;
+}
+
+.telefone-pesquisa {
+    position: relative;
+    top: 42px;
+    font-family: Impact, fantasy;
+    font-weight: 100;
+    font-size: 25px;
+    left: 93px;
+    color: #ffffff;
+    opacity: 0.89;
+}
+
+.cpf-pesquisa {
+    position: relative;
+    top: 12px;
+    font-family: Impact, fantasy;
+    font-weight: 100;
+    font-size: 25px;
+    left: 500px;
+    color: #ffffff;
+    opacity: 0.89;
+}
+
+.input-nome {
+    position: absolute;
+    left: 305px;
+    width: 500px;
+    border-radius: 30px;
+    height: 30px;
+}
+
+.input-email {
+    position: relative;
+    top: 40px;
+    left: 100px;
+    width: 270px;
+    border-radius: 30px;
+    height: 30px;
+}
+
+.input-senha {
+    position: relative;
+    top: 10px;
+    left: 510px;
+    width: 270px;
+    border-radius: 30px;
+    height: 30px;
+}
+
+.input-telefone {
+    position: relative;
+    top: 40px;
+    left: 100px;
+    width: 270px;
+    border-radius: 30px;
+    height: 30px;
+}
+
+.input-cpf {
+    position: relative;
+    top: 10px;
+    left: 510px;
+    width: 270px;
+    border-radius: 30px;
+    height: 30px;
+}
+
+.header-nome-alerta {
+}
+
+.button-posicionamento {
+    position: relative;
+    left: -300px;
+    top: 50px;
+}
+
+.cliente-button-retorno {
+    margin: -5px 12px 0px 0px;
+}
+
+/* Estilização --- FUNCIONÁRIOS (PESQUISA E CADASTRO DE DADOS) */
+
+.division-cadastro-funcionario {
+    margin-right: 935px;
+    height: 0.5px;
+    background-color: #ffffff;
+    margin-top: -30px;
+}
+
+.nome-pesquisa-funcionario {
+    font-family: Impact, fantasy;
+    font-weight: 100;
+    font-size: 30px;
+    position: absolute;
+    left: 220px;
+    color: #ffffff;
+    opacity: 0.89;
+}
+
+.input-f-nome {
+    position: absolute;
+    left: 350px;
+    width: 500px;
+    border-radius: 30px;
+    height: 30px;
+}
+
+.login-pesquisa {
+    position: relative;
+    top: 42px;
+    font-family: Impact, fantasy;
+    font-weight: 100;
+    font-size: 25px;
+    left: 85px;
+    color: #ffffff;
+    opacity: 0.89;
+}
+
+.senha-pesquisa {
+    position: relative;
+    top: 12px;
+    font-family: Impact, fantasy;
+    font-weight: 100;
+    font-size: 25px;
+    left: 500px;
+    color: #ffffff;
+    opacity: 0.89;
+}
+
+.input-login {
+    position: relative;
+    top: 40px;
+    left: 93px;
+    width: 270px;
+    border-radius: 30px;
+    height: 30px;
+}
+
+.input-f-senha {
+    position: relative;
+    top: 10px;
+    left: 510px;
+    width: 270px;
+    border-radius: 30px;
+    height: 30px;
+}
+
+.categoria-pesquisa {
+    position: relative;
+    top: 42px;
+    font-family: Impact, fantasy;
+    font-weight: 100;
+    font-size: 25px;
+    left: 85px;
+    color: #ffffff;
+    opacity: 0.89;
+}
+
+.input-categoria {
+    position: relative;
+    top: 40px;
+    left: 95px;
+    width: 270px;
+    border-radius: 30px;
+    height: 30px;
+}
+
+.input-veiculo {
+    position: relative;
+    top: 10px;
+    left: 510px;
+    width: 270px;
+    border-radius: 30px;
+    height: 30px;
+}
+
+.veiculo-pesquisa {
+    position: relative;
+    top: 12px;
+    font-family: Impact, fantasy;
+    font-weight: 100;
+    font-size: 25px;
+    left: 500px;
+    color: #ffffff;
+    opacity: 0.89;
+}
+
+/* Estilização --- EQUIPAMENTOS (PESQUISA E CADASTRO DE DADOS) */
+
+.division-pesquisa-equipamento {
+    margin-right: 923px;
+    height: 0.5px;
+    background-color: #ffffff;
+    margin-top: -30px;
+}
+
+.equipamento-pesquisa {
+    font-family: Impact, fantasy;
+    font-weight: 100;
+    font-size: 25px;
+    position: absolute;
+    left: 250px;
+    color: #ffffff;
+    opacity: 0.89;
+}
+
+.input-equipamento {
+    position: absolute;
+    left: 485px;
+    width: 500px;
+    border-radius: 30px;
+    height: 30px;
+}
+
+.local-pesquisa {
+    position: relative;
+    top: 42px;
+    font-family: Impact, fantasy;
+    font-weight: 100;
+    font-size: 25px;
+    left: 93px;
+    color: #ffffff;
+    opacity: 0.89;
+}
+
+.input-local {
+    position: relative;
+    top: 40px;
+    left: 100px;
+    width: 270px;
+    border-radius: 30px;
+    height: 30px;
+}
+
+/* Estilização --- VEÍCULOS (PESQUISA E CADASTRO DE DADOS) */
+
+.division-cadastro-veiculo {
+    margin-right: 1020px;
+    height: 0.5px;
+    background-color: #ffffff;
+    margin-top: -30px;
+}
+
+.nome-v-pesquisa {
+    font-family: Impact, fantasy;
+    font-weight: 100;
+    font-size: 25px;
+    position: absolute;
+    left: 220px;
+    color: #ffffff;
+    opacity: 0.89;
+}
+
+.p-button {
+    float: right;
+    right: 120px;
+    margin-top: -5px;
+}
+
+.input-v-nome {
+    position: absolute;
+    left: 400px;
+    width: 500px;
+    border-radius: 30px;
+    height: 30px;
+}
+
+.cor-pesquisa {
+    position: relative;
+    top: 42px;
+    font-family: Impact, fantasy;
+    font-weight: 100;
+    font-size: 25px;
+    left: 93px;
+    color: #ffffff;
+    opacity: 0.89;
+}
+
+.input-cor {
+    position: relative;
+    top: 40px;
+    left: 100px;
+    width: 270px;
+    border-radius: 30px;
+    height: 30px;
+}
+
+.placa-pesquisa {
+    position: relative;
+    top: 12px;
+    font-family: Impact, fantasy;
+    font-weight: 100;
+    font-size: 25px;
+    left: 500px;
+    color: #ffffff;
+    opacity: 0.89;
+}
+
+.input-placa {
+    position: relative;
+    top: 10px;
+    left: 510px;
+    width: 270px;
+    border-radius: 30px;
+    height: 30px;
+}
+
+/* ALERTAS RECENTES - TABELA ESTILIZADA */
+
+/* TABELAS - CONFIGURAÇÃO DE COLUNAS (GERAL) */
+
+.col-header-id {
+    width: 25px;
+    text-align: center;
+}
+
+.col-id {
+    width: 25px;
+    text-align: center;
+}
+
+.col-header-nome {
+    width: 350px;
+}
+
+.col-nome {
+    width: 300px;
+}
+
+.col-header-funcao {
+    width: 150px;
+    text-align: center;
+}
+
+.col-funcao {
+    width: 150px;
+    text-align: center;
+}
+
+.col-header-opcoes {
+    width: 200px;
+    text-align: center;
+}
+
+.col-opcoes {
+    width: 250px;
+    text-align: center;
+}
