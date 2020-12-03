@@ -35,8 +35,7 @@ import { ClientesAdministradorPesquisaComponent } from './clientes-administrador
 import { ErrorHandlerService } from './core/error-handler.service';
 import { AlertasPesquisaComponent } from './monitoramento/alertas-pesquisa/alertas-pesquisa.component';
 import { ToastModule } from 'primeng/toast';
-import { CategoriasService } from './complementos/categorias.service';
-import { EnderecosService } from './complementos/enderecos.service';
+import { EnderecosService } from './enderecos/enderecos.service';
 
 // Roteamento Dos Componentes Html:
 const routes: Routes = [
@@ -81,11 +80,11 @@ const routes: Routes = [
     FuncionariosService,
     EquipamentosService,
     VeiculosService,
-    CategoriasService,
     ConfirmationService,
     MessageService,
     ErrorHandlerService,
     EnderecosService
+
   ],
   bootstrap: [AppComponent]
 })

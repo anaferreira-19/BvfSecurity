@@ -2,16 +2,15 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Endereco } from '../core/model';
 
-@Injectable({
-  providedIn: 'root'
-})
-
 export class EnderecoFiltro {
   nome: string;
   pagina = 0;
-  itensPorPagina = 10;
+  itensPorPagina = 5;
 }
 
+@Injectable({
+  providedIn: 'root'
+})
 export class EnderecosService {
 
   constructor(private http: HttpClient) { }
@@ -50,9 +49,5 @@ export class EnderecosService {
         const endereco = response;
         return endereco;
       });
-  }
-
-  listarTodasEnderecos(): Promise<Endereco[]> {
-    return this.http.get<Endereco[]>(`${this.enderecosUrl}/todos`).toPromise();
   }
 }

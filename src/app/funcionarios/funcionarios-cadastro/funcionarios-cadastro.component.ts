@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
-import { CategoriasService } from 'src/app/complementos/categorias.service';
 import { ErrorHandlerService } from 'src/app/core/error-handler.service';
 import { VeiculosService } from 'src/app/veiculos/veiculos.service';
 import { FuncionariosService } from '../funcionarios.service';
@@ -21,7 +20,6 @@ export class FuncionariosCadastroComponent implements OnInit {
   formulario: FormGroup;
 
   constructor(
-    private categoriasService: CategoriasService,
     private funcionariosService: FuncionariosService,
     private veiculosService: VeiculosService,
     private errorHandler: ErrorHandlerService,
@@ -41,7 +39,6 @@ export class FuncionariosCadastroComponent implements OnInit {
       this.carregarFuncionario(idFuncionario);
 
       this.carregarVeiculos();
-      this.carregarCategorias();
     }
 
   }
@@ -100,13 +97,4 @@ export class FuncionariosCadastroComponent implements OnInit {
           .map(v => ({ label: v.nome, value: v.id }));
       }).catch(erro => this.errorHandler.handle(erro));
   }
-
-  carregarCategorias() {
-    return this.categoriasService.listarTodasCategorias()
-      .then(categorias => {
-        this.categorias = categorias
-          .map(c => ({ label: c.nome, value: c.id }));
-      }).catch(erro => this.errorHandler.handle(erro));
-  }
-
 }
