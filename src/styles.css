@@ -308,6 +308,20 @@ body {
     margin: -5px 12px 0px 0px;
 }
 
+.dropdown-categoria{
+    position: relative;
+    top: 40px;
+    margin-left: 90px;
+    width: 300px;
+}
+
+.dropdown-veiculo{
+    position: relative;
+    top: 10px;
+    margin-left: 505px;
+    width: 300px;
+}
+
 /* Estilização --- FUNCIONÁRIOS (PESQUISA E CADASTRO DE DADOS) */
 
 .division-cadastro-funcionario {

@@ -1,22 +1,23 @@
 <div class="container">
     <div class="ui-g">
-        <div class="ui-g-4">
-            <h1 class="titulo-pesquisa">Equipamentos - Cadastro</h1>
-            <hr class="division-pesquisa-equipamento">
-            <br />
-        </div>
-        <div class="ui-g-12 ui-md-9 ui-fluid">
-            <label class="equipamento-pesquisa">Nome do Equipamento</label>
-            <input pInputText class="input-equipamento">
-        </div>
-        <div class="ui-g-12 ui-md-9 ui-fluid">
-            <label class="local-pesquisa">Nome do Local</label>
-            <input pInputText class="input-local" type="text">
-        </div>
-        <div class="button-posicionamento">
-            <button class="button-salvar" pButton type="submit" label="Salvar" icon="pi pi-save"></button>
-            <button class="button-retorno" pButton routerLink="/equipamentos"
-                label="Voltar aos Registros" icon="pi pi-arrow-left"></button>
-        </div>
+        <form autocomplete="off" (ngSubmit)="salvar()" [formGroup]="formulario">
+            <div class="ui-g-4">
+                <h1 class="titulo-pesquisa">Equipamentos - Cadastro</h1>
+                <hr class="division-pesquisa-equipamento">
+                <br />
+            </div>
+            <div class="ui-g-12 ui-md-9 ui-fluid">
+                <label class="equipamento-pesquisa">Nome do Equipamento</label>
+                <input pInputText class="input-equipamento"  formControlName="nome">
+
+                <app-message [control]="formulario.get('nome')" error="required" text="Campo 'nome' é obrigatório.">
+                </app-message>
+            </div>
+            <div class="button-posicionamento">
+                <button class="button-salvar" pButton type="submit" label="Salvar" icon="pi pi-save"></button>
+                <button class="button-retorno" pButton routerLink="/equipamentos" label="Voltar aos Registros"
+                    icon="pi pi-arrow-left"></button>
+            </div>
+        </form>
     </div>
 </div>

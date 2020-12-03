@@ -1,27 +1,28 @@
 <div class="container">
     <div class="ui-g">
-        <div class="ui-g-4">
-            <h1 class="titulo-pesquisa">Veículos - Cadastro</h1>
-            <hr class="division-cadastro-veiculo">
-            <br />
-        </div>
-        <div class="ui-g-12 ui-md-9 ui-fluid">
-            <label class="nome-v-pesquisa">Nome do Veículo</label>
-            <input pInputText class="input-v-nome">
-        </div>
-        <div class="ui-g-12 ui-md-9 ui-fluid">
-            <label class="cor-pesquisa">Cor</label>
-            <input pInputText class="input-cor">
-        </div>
-        <div class="ui-g-12 ui-md-9 ui-fluid">
-            <label class="placa-pesquisa">Placa</label>
-            <input pInputText class="input-placa">
-        </div>
-        <div class="button-posicionamento">
-            <button class="button-salvar" pButton type="submit" label="Salvar" icon="pi pi-save"></button>
-            <button class="button-retorno" pButton routerLink="/equipamentos"
-                label="Voltar aos Registros" icon="pi pi-arrow-left"></button>
-        </div>
+        <form autocomplete="off" (ngSubmit)="salvar()" [formGroup]="formulario">
+            <div class="ui-g-4">
+                <h1 class="titulo-pesquisa">Veículos - Cadastro</h1>
+                <hr class="division-cadastro-veiculo">
+                <br />
+            </div>
+            <div class="ui-g-12 ui-md-9 ui-fluid">
+                <label class="nome-v-pesquisa">Nome do Veículo</label>
+                <input pInputText class="input-v-nome" type="text" formControlName="nome">
+            </div>
+            <div class="ui-g-12 ui-md-9 ui-fluid">
+                <label class="cor-pesquisa">Cor</label>
+                <input pInputText class="input-cor">
+            </div>
+            <div class="ui-g-12 ui-md-9 ui-fluid">
+                <label class="placa-pesquisa">Placa</label>
+                <input pInputText class="input-placa" placeholder="Ex.: AAA 0000">
+            </div>
+            <div class="button-posicionamento">
+                <button class="button-salvar" pButton type="submit" label="Salvar" icon="pi pi-save"></button>
+                <button class="button-retorno" pButton routerLink="/equipamentos" label="Voltar aos Registros"
+                    icon="pi pi-arrow-left"></button>
+            </div>
+        </form>
     </div>
 </div>
-

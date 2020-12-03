@@ -16,7 +16,6 @@ export class MonitoramentoService {
   constructor(private http: HttpClient) { }
 
   alertasUrl = 'http://localhost:8080/alertas';
-  enderecosUrl = 'http://localhost:8080/enderecos';
 
   pesquisar(filtro: AlertasFiltro): Promise<any> {
     let params = new HttpParams({

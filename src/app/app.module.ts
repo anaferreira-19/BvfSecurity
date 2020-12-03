@@ -34,19 +34,20 @@ import { VeiculosModule } from './veiculos/veiculos.module';
 import { ClientesAdministradorPesquisaComponent } from './clientes-administrador/clientes-administrador-pesquisa/clientes-administrador-pesquisa.component';
 import { ErrorHandlerService } from './core/error-handler.service';
 import { AlertasPesquisaComponent } from './monitoramento/alertas-pesquisa/alertas-pesquisa.component';
-
+import { ToastModule } from 'primeng/toast';
+import { CategoriasService } from './complementos/categorias.service';
 
 // Roteamento Dos Componentes Html:
 const routes: Routes = [
   { path: 'tela-inicial', component: ConteudoInicialComponent },
   { path: 'monitoramento', component: MonitoramentoComponent },
   { path: 'monitoramento/alertas', component: AlertasPesquisaComponent },
-  { path: 'clientes-administrador', component: ClientesAdministradorPesquisaComponent },
-  { path: 'clientes-administrador/novo-cliente-administrador', component: ClientesAdministradorCadastroComponent },
+  { path: 'clientesadministrador', component: ClientesAdministradorPesquisaComponent },
+  { path: 'clientesadministrador/novo', component: ClientesAdministradorCadastroComponent },
   { path: 'funcionarios', component: FuncionariosPesquisaComponent },
-  { path: 'funcionarios/novo-funcionario', component: FuncionariosCadastroComponent },
-  { path: 'equipamentos/novo-equipamento', component: EquipamentosCadastroComponent },
-  { path: 'veiculos/novo-veiculo', component: VeiculosCadastroComponent }
+  { path: 'funcionarios/novo', component: FuncionariosCadastroComponent },
+  { path: 'equipamentos/novo', component: EquipamentosCadastroComponent },
+  { path: 'veiculos/novo', component: VeiculosCadastroComponent }
 ]
 
 
@@ -70,7 +71,8 @@ const routes: Routes = [
     TelaInicialModule,
     FuncionariosModule,
     EquipamentosModule,
-    VeiculosModule
+    VeiculosModule,
+    ToastModule
   ],
   providers: [
     MonitoramentoService,
@@ -78,6 +80,7 @@ const routes: Routes = [
     FuncionariosService,
     EquipamentosService,
     VeiculosService,
+    CategoriasService,
     ConfirmationService,
     MessageService,
     ErrorHandlerService

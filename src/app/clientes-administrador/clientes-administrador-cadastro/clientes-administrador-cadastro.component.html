@@ -1,36 +1,61 @@
 <div class="container">
-    <div class="ui-g">
-        <div class="ui-g-4">
-            <h1 class="titulo-pesquisa">Clientes Administradores - Cadastro</h1>
-            <hr class="division-pesquisa-cliente">
-            <br />
-        </div>
-        <div class="ui-g-12 ui-md-9 ui-fluid">
-            <label class="nome-pesquisa">Nome do Cliente</label>
-            <input pInputText class="input-nome" type="text">
+    <form autocomplete="off" (ngSubmit)="salvar()" [formGroup]="formulario">
+        <div class="ui-g">
+            <div class="ui-g-4">
+                <h1 class="titulo-pesquisa">Clientes Administradores - Cadastro</h1>
+                <hr class="division-pesquisa-cliente">
+                <br />
+            </div>
+            <div class="ui-g-12 ui-md-9 ui-fluid">
+                <label class="nome-pesquisa">Nome do Cliente</label>
+                <input pInputText class="input-nome" type="text" formControlName="nome">
 
-            <br />
+                <app-message class="error-message-1" [control]="formulario.get('nome')" error="required" text="Campo 'nome' é obrigatório.">
+                </app-message>
+                <app-message  class="error-message-1" [control]="formulario.get('nome')" error='minlength'
+                    text="Informe pelo menos 5 caracteres.">
+                </app-message>
+                <br />
+            </div>
+            <div class="ui-g-12 ui-md-9 ui-fluid">
+                <label class="email-pesquisa">E-mail</label>
+                <input pInputText class="input-email" type="text" formControlName="email">
+
+                <app-message class="error-message-2" [control]="formulario.get('email')" error="required" text="Campo 'email' é obrigatório.">
+                </app-message>
+
+                <app-message class="error-message-2" [control]="formulario.get('email')" error="email" text="E-mail inválido.">
+                </app-message>
+    
+            </div>
+            <div class="ui-g-12 ui-md-9 ui-fluid">
+                <label class="senha-pesquisa">Senha</label>
+                <input pInputText class="input-senha" type="password"  formControlName="senha">
+
+                <app-message class="error-message-3" [control]="formulario.get('senha')" error="required" text="Campo 'senha' é obrigatório.">
+                </app-message>
+                <app-message class="error-message-3" [control]="formulario.get('senha')" error="minlength" text="Informe pelo menos 6 caracteres.">
+                </app-message>
+            </div>
+            <div class="ui-g-12 ui-md-9 ui-fluid">
+                <label class="telefone-pesquisa">Telefone</label>
+                <input pInputText class="input-telefone" type="text" formControlName="telefone" mask="(00) 0000-0000 ||(00) 00000-0000">
+
+                <app-message class="error-message-4" [control]="formulario.get('telefone')" error="required" text="Campo 'telefone' é obrigatório.">
+                </app-message>
+            </div>
+            <div class="ui-g-12 ui-md-9 ui-fluid">
+                <label class="cpf-pesquisa">CPF</label>
+                <input pInputText class="input-cpf" type="text" formControlName="cpf" mask="000.000.000-00" placeholder="Ex.: 000.000.000-00">
+
+                <app-message class="error-message-5" [control]="formulario.get('cpf')" error="required" text="Campo 'cpf' é obrigatório.">
+                </app-message>
+            </div>
+            <div class="button-posicionamento">
+                <button pButton type="submit" label="Salvar" icon="pi pi-save"></button>
+                <button class="button-retorno" pButton routerLink="/clientesadministrador" label="Voltar aos Registros"
+                    icon="pi pi-arrow-left"></button>
+            </div>
         </div>
-        <div class="ui-g-12 ui-md-9 ui-fluid">
-            <label class="email-pesquisa">E-mail</label>
-            <input pInputText class="input-email" type="text">
-        </div>
-        <div class="ui-g-12 ui-md-9 ui-fluid">
-            <label class="senha-pesquisa">Senha</label>
-            <input pInputText class="input-senha" type="text">
-        </div>
-        <div class="ui-g-12 ui-md-9 ui-fluid">
-            <label class="telefone-pesquisa">Telefone</label>
-            <input pInputText class="input-telefone" type="text">
-        </div>
-        <div class="ui-g-12 ui-md-9 ui-fluid">
-            <label class="cpf-pesquisa">CPF</label>
-            <input pInputText class="input-cpf" type="text">
-        </div>
-        <div class="button-posicionamento">
-            <button class="button-salvar" pButton type="submit" label="Salvar" icon="pi pi-save"></button>
-            <button class="button-retorno" pButton routerLink="/clientes-administrador" label="Voltar aos Registros"
-                icon="pi pi-arrow-left"></button>
-        </div>
-    </div>
+    </form>
 </div>

@@ -32,6 +32,6 @@ export class ErrorHandlerService {
         console.error('Ocorreu um erro: ', errorResponse);
       }
     }
-    this.messageService.add({ severity: 'error', summary: 'Atenção!', detail: msg })
+    this.messageService.add({ severity: 'error', summary: 'Atenção!', detail: msg });
   }
 }

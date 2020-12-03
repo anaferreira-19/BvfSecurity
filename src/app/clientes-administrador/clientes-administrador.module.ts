@@ -10,6 +10,11 @@ import { TableModule } from 'primeng/table';
 import { TooltipModule } from 'primeng/tooltip';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DialogModule } from 'primeng/dialog';
+import { NgxMaskModule, IConfig } from 'ngx-mask';
+
+const maskConfig: Partial<IConfig> = {
+  validation: false,
+};
 
 @NgModule({
   declarations: [ClientesAdministradorPesquisaComponent, ClientesAdministradorCadastroComponent],
@@ -23,7 +28,8 @@ import { DialogModule } from 'primeng/dialog';
     TableModule,
     TooltipModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxMaskModule.forRoot(maskConfig)
   ]
 })
 export class ClientesAdministradorModule { }

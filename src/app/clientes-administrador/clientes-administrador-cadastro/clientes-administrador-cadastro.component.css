@@ -1,0 +1,50 @@
+/* ESTILIZAÇÃO --- MENSAGENS FORMULÁRIO ERRO */
+
+.error-message-1 {
+    color: red;
+    font-family: "Lucida Console", Courier, monospace;
+    font-size: 15px;
+    position: absolute;
+    margin-left: 535px;
+    margin-top: 33px;
+}
+
+.error-message-2 {
+    color: red;
+    font-family: "Lucida Console", Courier, monospace;
+    font-size: 15px;
+    position: absolute;
+    margin: 0;
+    margin-right: 600px;
+    margin-top: 80px;
+}
+
+.error-message-3 {
+    color: red;
+    font-family: "Lucida Console", Courier, monospace;
+    font-size: 15px;
+    position: absolute;
+    margin: 0;
+    margin-left: 300px;
+    margin-top: 50px;
+}
+
+.error-message-4 {
+    color: red;
+    font-family: "Lucida Console", Courier, monospace;
+    font-size: 15px;
+    position: absolute;
+    margin: 0;
+    margin-right: 600px;
+    margin-top: 80px;
+}
+
+.error-message-5 {
+    color: red;
+    font-family: "Lucida Console", Courier, monospace;
+    font-size: 15px;
+    position: absolute;
+    margin: 0;
+    margin-left: 300px;
+    margin-top: 50px;
+}

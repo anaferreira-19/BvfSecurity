@@ -1,35 +1,66 @@
 <div class="container">
     <div class="ui-g">
-        <div class="ui-g-4">
-            <h1 class="titulo-pesquisa">Funcionários - Cadastro</h1>
-            <hr class="division-cadastro-funcionario">
-            <br />
-        </div>
-        <div class="ui-g-12 ui-md-9 ui-fluid">
-            <label class="nome-pesquisa">Nome do Funcionário</label>
-            <input pInputText class="input-f-nome">
-            <br />
-        </div>
-        <div class="ui-g-12 ui-md-9 ui-fluid">
-            <label class="login-pesquisa">Login</label>
-            <input pInputText class="input-login" type="text">
-        </div>
-        <div class="ui-g-12 ui-md-9 ui-fluid">
-            <label class="senha-pesquisa">Senha</label>
-            <input pInputText class="input-f-senha" type="text">
-        </div>
-        <div class="ui-g-12 ui-md-9 ui-fluid">
-            <label class="categoria-pesquisa">Categoria</label>
-            <input pInputText class="input-categoria" type="text">
-        </div>
-        <div class="ui-g-12 ui-md-9 ui-fluid">
-            <label class="veiculo-pesquisa">Veículo</label>
-            <input pInputText class="input-veiculo" type="text">
-        </div>
-        <div class="button-posicionamento">
-            <button class="button-salvar" pButton type="submit" label="Salvar" icon="pi pi-save"></button>
-            <button class="button-retorno" pButton routerLink="/funcionarios"
-                label="Voltar aos Registros" icon="pi pi-arrow-left"></button>
-        </div>F
+        <form autocomplete="off" (ngSubmit)="salvar()" [formGroup]="formulario">
+            <div class="ui-g-4">
+                <h1 class="titulo-pesquisa">Funcionários - Cadastro</h1>
+                <hr class="division-cadastro-funcionario">
+                <br />
+            </div>
+            <div class="ui-g-12 ui-md-9 ui-fluid">
+                <label class="nome-pesquisa">Nome do Funcionário</label>
+                <input pInputText class="input-f-nome" type="text" name="nome" formControlName="nome">
+                <br />
+
+                <app-message class="error-message-1" [control]="formulario.get('nome')" error="required"
+                    text="Campo 'Nome' é obrigatório.">
+                </app-message>
+                <app-message class="error-message-1" [control]="formulario.get('nome')" error='minlength'
+                    text="Informe pelo menos 5 caracteres.">
+                </app-message>
+            </div>
+            <div class="ui-g-12 ui-md-9 ui-fluid">
+                <label class="login-pesquisa">Login</label>
+                <input pInputText class="input-login" type="text" name="login" formControlName="login">
+
+                <app-message class="error-message-2" [control]="formulario.get('login')" error="required"
+                    text="Campo 'Login' é obrigatório.">
+                </app-message>
+                <app-message class="error-message-2" [control]="formulario.get('login')" error='minlength'
+                    text="Informe pelo menos 3 caracteres.">
+                </app-message>
+                <app-message class="error-message-2" [control]="formulario.get('login')" error='maxlength'
+                    text="Informe no máximo 9 caracteres.">
+                </app-message>
+            </div>
+            <div class="ui-g-12 ui-md-9 ui-fluid">
+                <label class="senha-pesquisa">Senha</label>
+                <input pInputText class="input-f-senha" type="password" name="senha" formControlName="senha">
+
+                <app-message class="error-message-3" [control]="formulario.get('senha')" error="required"
+                    text="Campo 'Senha' é obrigatório.">
+                </app-message>
+                <app-message class="error-message-3" [control]="formulario.get('senha')" error="minlength"
+                    text="Informe pelo menos 6 caracteres.">
+                </app-message>
+            </div>
+            <div class="ui-g-12 ui-fluid" formGroupName="categoria">
+                <label class="categoria-pesquisa">Categoria</label>
+                <p-dropdown placeholder="Selecione uma categoria..." class="dropdown-categoria" name="categoria"
+                    [options]="categoria" [filter]="true" formControlName="id"></p-dropdown>
+
+
+            </div>
+            <div class="ui-g-12 ui-md-9 ui-fluid">
+                <label class="veiculo-pesquisa">Veículo</label>
+                <p class="notificacao">* Selecionar apenas para vigilantes.</p>
+                <p-dropdown placeholder="Selecione um veículo..." class="dropdown-veiculo" name="categoria">
+                </p-dropdown>
+            </div>
+            <div class="button-posicionamento">
+                <button class="button-salvar" pButton type="submit" label="Salvar" icon="pi pi-save"></button>
+                <button class="button-retorno" pButton routerLink="/funcionarios" label="Voltar aos Registros"
+                    icon="pi pi-arrow-left"></button>
+            </div>
+        </form>
     </div>
 </div>

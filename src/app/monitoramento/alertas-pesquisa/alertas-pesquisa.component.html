@@ -15,20 +15,24 @@
     </div>
 
     <div class="tabela">
-        <p-table>
+        <p-table styleClass="p-datatable-gridlines" [value]="alertas" [paginator]="true"
+        [rows]="filtro.itensPorPagina" [totalRecords]="totalRegistros" [lazy]="true"
+        (onLazyLoad)="aoMudarPagina($event)" #tabela>
             <ng-template pTemplate="header">
                 <tr>
                     <th>#</th>
                     <th>Equipamento</th>
-                    <th>Dia e Hora</th>
+                    <th>Dia</th>
+                    <th>Hora</th>
                     <th>Opções</th>
                 </tr>
             </ng-template>
-            <ng-template pTemplate="body" let-cli>
+            <ng-template pTemplate="body" mask="(00) 0000-0000 ||(00) 00000-0000" let-alerta>
                 <tr>
-                    <td>{{cli.id}}</td>
-                    <td>{{cli.nome}}</td>
-                    <td>{{cli.telefone}}</td>
+                    <td>{{alerta.id}}</td>
+                    <td>{{alerta.equipamento.nome}}</td>
+                    <td>{{alerta.data | date:"dd/MM/yyyy"}}</td>
+                    <td>{{alerta.hora}}</td>
                     <td class="coluna-opcoes">
                         <a pButton icon="pi pi-pencil" pTooltip="Editar" tooltipPosition="top"></a>
                         <button pButton icon="pi pi-trash" pTooltip="Excluir" tooltipPosition="top"></button>

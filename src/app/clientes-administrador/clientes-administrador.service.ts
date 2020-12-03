@@ -1,7 +1,6 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ClienteAdministrador } from '../core/model';
-import { ClientesAdministradorModule } from './clientes-administrador.module';
 
 export class ClienteAdministradorFiltro {
   nome: string;
@@ -43,9 +42,9 @@ export class ClientesAdministradorService {
       });
   }
 
-  adicionar(clientesadministrador: ClienteAdministrador): Promise<ClienteAdministrador> {
-    return this.http.put<ClienteAdministrador>(this.clientesAdministradorUrl, clientesadministrador).toPromise();
-  }
+  adicionar(clienteAdministrador: ClienteAdministrador): Promise<ClienteAdministrador> {
+    return this.http.post<ClienteAdministrador>(this.clientesAdministradorUrl, clienteAdministrador).toPromise();
+  } 
 
   atualizar(clienteAdministrador: ClienteAdministrador): Promise<ClienteAdministrador> {
     return this.http.put<ClienteAdministrador>(`${this.clientesAdministradorUrl}/${clienteAdministrador.id}`, clienteAdministrador)
