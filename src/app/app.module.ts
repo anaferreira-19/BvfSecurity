@@ -36,6 +36,7 @@ import { ErrorHandlerService } from './core/error-handler.service';
 import { AlertasPesquisaComponent } from './monitoramento/alertas-pesquisa/alertas-pesquisa.component';
 import { ToastModule } from 'primeng/toast';
 import { CategoriasService } from './complementos/categorias.service';
+import { EnderecosService } from './complementos/enderecos.service';
 
 // Roteamento Dos Componentes Html:
 const routes: Routes = [
@@ -83,7 +84,8 @@ const routes: Routes = [
     CategoriasService,
     ConfirmationService,
     MessageService,
-    ErrorHandlerService
+    ErrorHandlerService,
+    EnderecosService
   ],
   bootstrap: [AppComponent]
 })
