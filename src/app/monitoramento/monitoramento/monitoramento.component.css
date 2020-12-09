@@ -14,4 +14,52 @@
     float: right;
 }
 
+.container-tab {
+    width: 580px;
+    margin-left: 760px;
+    margin-top: -700px;
+}
+.button {
+    position: relative;
+    margin-left: 150px
+}
+
+.alerta {
+    color: #ffffff;
+    font-family: Impact, fantasy;
+    margin-left: 20px;
+    font-size: 23px;
+    display: inline;
+}
+
+.endereco {
+    color: #ffffff;
+    font-family: Impact, fantasy;
+    margin-left: 180px;
+    position: relative;
+    top: -60px;
+    font-size: 23px;
+    display: inline;
+}
+
+.equipamento {
+    color: #ffffff;
+    font-family: Impact, fantasy;
+    margin-left: 310px;
+    position: relative;
+    top: -120px;
+    font-size: 23px;
+    display: inline;
+}
+
+.veiculo {
+    color: #ffffff;
+    font-family: Impact, fantasy;
+    margin-left: 470px;
+    position: relative;
+    top: -181px;
+    font-size: 23px;
+    display: inline;
+}
+
 

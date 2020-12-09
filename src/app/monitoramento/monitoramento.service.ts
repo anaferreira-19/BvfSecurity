@@ -13,6 +13,7 @@ export class AlertasFiltro {
 })
 export class MonitoramentoService {
 
+
   constructor(private http: HttpClient) { }
 
   alertasUrl = 'http://localhost:8080/alertas';
@@ -68,5 +69,9 @@ export class MonitoramentoService {
         const alerta = response;
         return alerta;
       });
+  }
+  async todos(): Promise<Alerta[]> {
+    const response = await this.http.get<Alerta[]>(this.alertasUrl).toPromise();
+    return response;
   }
 }

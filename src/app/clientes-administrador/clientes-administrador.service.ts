@@ -44,15 +44,15 @@ export class ClientesAdministradorService {
 
   adicionar(clienteAdministrador: ClienteAdministrador): Promise<ClienteAdministrador> {
     return this.http.post<ClienteAdministrador>(this.clientesAdministradorUrl, clienteAdministrador).toPromise();
-  } 
+  }
 
   atualizar(clienteAdministrador: ClienteAdministrador): Promise<ClienteAdministrador> {
     return this.http.put<ClienteAdministrador>(`${this.clientesAdministradorUrl}/${clienteAdministrador.id}`, clienteAdministrador)
-    .toPromise()
-    .then(response => {
-      const clienteAdministradorAlterado = response;
-      return clienteAdministradorAlterado;
-    });
+      .toPromise()
+      .then(response => {
+        const clienteAdministradorAlterado = response;
+        return clienteAdministradorAlterado;
+      });
   }
 
   excluir(id: number): Promise<void> {

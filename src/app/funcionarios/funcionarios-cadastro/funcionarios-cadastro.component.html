@@ -28,9 +28,6 @@
                 <app-message class="error-message-2" [control]="formulario.get('login')" error='minlength'
                     text="Informe pelo menos 3 caracteres.">
                 </app-message>
-                <app-message class="error-message-2" [control]="formulario.get('login')" error='maxlength'
-                    text="Informe no máximo 9 caracteres.">
-                </app-message>
             </div>
             <div class="ui-g-12 ui-md-9 ui-fluid">
                 <label class="senha-pesquisa">Senha</label>
@@ -45,16 +42,17 @@
             </div>
             <div class="ui-g-12 ui-fluid" formGroupName="categoria">
                 <label class="categoria-pesquisa">Categoria</label>
-                <p-dropdown placeholder="Selecione uma categoria..." class="dropdown-categoria" name="categoria"
-                    [options]="categoria" [filter]="true" formControlName="id"></p-dropdown>
+                <p-dropdown name="categoria" placeholder="Selecione uma categoria..." class="dropdown-categoria"
+                    [options]="categorias" [filter]="true" formControlName="id"></p-dropdown>
 
-
+                    <app-message class="error-message-4" [control]="formulario.get('categoria.id')" error="required" text="Informe a categoria!"></app-message>
             </div>
-            <div class="ui-g-12 ui-md-9 ui-fluid">
+            <div class="ui-g-12 ui-md-9 ui-fluid" formGroupName="veiculo">
                 <label class="veiculo-pesquisa">Veículo</label>
-                <p class="notificacao">* Selecionar apenas para vigilantes.</p>
-                <p-dropdown placeholder="Selecione um veículo..." class="dropdown-veiculo" name="categoria">
-                </p-dropdown>
+                <p-dropdown name="veiculo" placeholder="Selecione um veículo..." class="dropdown-veiculo"
+                    [options]="veiculos" [filter]="true" formControlName="id"> </p-dropdown>
+
+                    <app-message class="error-message-5" [control]="formulario.get('veiculo.id')" error="required" text="Informe um veículo!"></app-message>
             </div>
             <div class="button-posicionamento">
                 <button class="button-salvar" pButton type="submit" label="Salvar" icon="pi pi-save"></button>

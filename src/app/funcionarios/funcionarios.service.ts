@@ -37,7 +37,7 @@ export class FuncionariosService {
         const resultado = {
           funcionarios,
           total: response.totalElements
-        };
+        }
         return resultado;
       });
   }
@@ -70,3 +70,4 @@ export class FuncionariosService {
       });
   }
 }
+

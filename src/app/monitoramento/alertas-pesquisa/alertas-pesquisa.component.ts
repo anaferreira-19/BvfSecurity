@@ -3,12 +3,14 @@ import { ConfirmationService, LazyLoadEvent, MessageService } from 'primeng/api'
 import { ErrorHandlerService } from 'src/app/core/error-handler.service';
 import { AlertasFiltro, MonitoramentoService } from '../monitoramento.service';
 
+
 @Component({
   selector: 'app-alertas-pesquisa',
   templateUrl: './alertas-pesquisa.component.html',
   styleUrls: ['./alertas-pesquisa.component.css']
 })
 export class AlertasPesquisaComponent implements OnInit {
+
 
   totalRegistros = 0;
   filtro = new AlertasFiltro();
@@ -37,4 +39,6 @@ export class AlertasPesquisaComponent implements OnInit {
     const pagina = event.first / event.rows;
     this.pesquisar(pagina);
   }
+
+
 }

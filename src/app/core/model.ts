@@ -51,6 +51,7 @@ export class Alerta {
     data: Date;
     hora: Time;
     equipamento = new Equipamento();
+  alertas: any;
 }
 
 export class Veiculo {

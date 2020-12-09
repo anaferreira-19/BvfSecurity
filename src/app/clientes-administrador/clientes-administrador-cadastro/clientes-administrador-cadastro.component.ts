@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
 import { ErrorHandlerService } from 'src/app/core/error-handler.service';
-import { ClienteAdministrador } from 'src/app/core/model';
 import { ClientesAdministradorService } from '../clientes-administrador.service';
 
 
@@ -26,9 +25,22 @@ export class ClientesAdministradorCadastroComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+
     this.configurarFormulario();
 
-   
+    const idClienteAdministrador = this.route.snapshot.params['id'];
+
+    if (idClienteAdministrador) {
+      this.carregarClienteAdministrador(idClienteAdministrador);
+    }
+  }
+
+  carregarClienteAdministrador(id: number) {
+    this.clientesAdministradorService.buscarPorId(id)
+      .then(clienteAdministrador => {
+        this.formulario.patchValue(clienteAdministrador);
+      })
+      .catch(erro => this.errorHandler.handle(erro));
   }
 
   configurarFormulario() {
@@ -36,7 +48,7 @@ export class ClientesAdministradorCadastroComponent implements OnInit {
       id: [],
       nome: [null, [Validators.required, Validators.minLength(5)]],
       telefone: [null, [Validators.required]],
-      cpf: [null,[Validators.required]],
+      cpf: [null, [Validators.required]],
       email: [null, [Validators.required, Validators.email]],
       senha: [null, [Validators.required, Validators.minLength(5)]]
     });
@@ -58,14 +70,14 @@ export class ClientesAdministradorCadastroComponent implements OnInit {
     this.clientesAdministradorService.adicionar(this.formulario.value)
       .then(clienteAdicionada => {
         this.messageService.add({ severity: 'success', detail: 'Cliente adicionado com sucesso!' });
-        this.router.navigate(['/clientesadministrador']);
+        this.router.navigate(['/enderecos']);
       }).catch(erro => this.errorHandler.handle(erro));
   }
 
   atualizarClienteAdministradores() {
     this.clientesAdministradorService.atualizar(this.formulario.value)
-      .then(ClienteAdministrador => {
-        this.formulario.patchValue(ClienteAdministrador);
+      .then(clienteadministrador => {
+        this.formulario.patchValue(clienteadministrador);
         this.messageService.add({ severity: 'success', detail: 'Cliente alterado com sucesso!' });
       }).catch(erro => this.errorHandler.handle(erro));
   }

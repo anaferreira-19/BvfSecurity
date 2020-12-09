@@ -28,7 +28,6 @@ import { FuncionariosService } from './funcionarios/funcionarios.service';
 import { EquipamentosModule } from './equipamentos/equipamentos.module';
 import { EquipamentosService } from './equipamentos/equipamentos.service';
 import { EquipamentosCadastroComponent } from './equipamentos/equipamentos-cadastro/equipamentos-cadastro.component';
-import { VeiculosCadastroComponent } from './veiculos/veiculos-cadastro/veiculos-cadastro.component';
 import { VeiculosService } from './veiculos/veiculos.service';
 import { VeiculosModule } from './veiculos/veiculos.module';
 import { ClientesAdministradorPesquisaComponent } from './clientes-administrador/clientes-administrador-pesquisa/clientes-administrador-pesquisa.component';
@@ -36,6 +35,13 @@ import { ErrorHandlerService } from './core/error-handler.service';
 import { AlertasPesquisaComponent } from './monitoramento/alertas-pesquisa/alertas-pesquisa.component';
 import { ToastModule } from 'primeng/toast';
 import { EnderecosService } from './enderecos/enderecos.service';
+import { EnderecosModule } from './enderecos/enderecos.module';
+import { CategoriasService } from './categorias/categorias.service';
+import { CategoriasModule } from './categorias/categorias.module';
+import { EnderecosCadastroComponent } from './enderecos/enderecos-cadastro/enderecos-cadastro.component';
+import { EnderecosPesquisaComponent } from './enderecos/enderecos-pesquisa/enderecos-pesquisa.component';
+import { VeiculosCadastroComponent } from './veiculos/veiculos-cadastro/veiculos-cadastro.component';
+import { VeiculosPesquisaComponent } from './veiculos/veiculos-pesquisa/veiculos-pesquisa.component';
 
 // Roteamento Dos Componentes Html:
 const routes: Routes = [
@@ -47,7 +53,10 @@ const routes: Routes = [
   { path: 'funcionarios', component: FuncionariosPesquisaComponent },
   { path: 'funcionarios/novo', component: FuncionariosCadastroComponent },
   { path: 'equipamentos/novo', component: EquipamentosCadastroComponent },
-  { path: 'veiculos/novo', component: VeiculosCadastroComponent }
+  { path: 'veiculos', component: VeiculosPesquisaComponent },
+  { path: 'veiculos/novo', component: VeiculosCadastroComponent },
+  { path: 'enderecos', component: EnderecosPesquisaComponent },
+  { path: 'enderecos/novo', component: EnderecosCadastroComponent }
 ]
 
 
@@ -72,7 +81,9 @@ const routes: Routes = [
     FuncionariosModule,
     EquipamentosModule,
     VeiculosModule,
-    ToastModule
+    EnderecosModule,
+    ToastModule,
+    CategoriasModule
   ],
   providers: [
     MonitoramentoService,
@@ -83,7 +94,8 @@ const routes: Routes = [
     ConfirmationService,
     MessageService,
     ErrorHandlerService,
-    EnderecosService
+    EnderecosService,
+    CategoriasService
 
   ],
   bootstrap: [AppComponent]

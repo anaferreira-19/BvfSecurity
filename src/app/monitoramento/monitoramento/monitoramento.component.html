@@ -1,22 +1,30 @@
 <div>
     <div id="map" leaflet (leafletMapReady)="onMapReady($event)" [leafletOptions]="mapOptions">
     </div>
-    <h1><a routerLink="/monitoramento/alertas">MAIS ALERTAS</a></h1>
-    <div>
-        <p-table>
+    <h1><a class="alerta" routerLink="/monitoramento/alertas">MAIS ALERTAS</a></h1>
+    <h1><a class="endereco" routerLink="/enderecos/novo">ENDEREÇOS</a></h1>
+    <h1><a class="equipamento" routerLink="/enderecos/novo">EQUIPAMENTOS</a></h1>
+    <h1><a class="veiculo" routerLink="/enderecos/novo">VEICULOS</a></h1>
+    <div class="container-tab">
+        <p-table class="tabelas-recentes" [value]="alertas">
             <ng-template pTemplate="header">
                 <tr>
-                    <th class="header-nome-alerta">Estabelecimento</th>
-                    <th class="data-hora">Data e Hora</th>
+                    <th class="header-nome-alerta">Equipamento</th>
+                    <th class="data">Data</th>
+                    <th class="hora">Hora</th>
+                    <th class="opcoes">Opções</th>
                 </tr>
             </ng-template>
-            <ng-template pTemplate="body" let-alerta>
+            <ng-template pTemplate="body" let-alerta matSort (matSortChange)="sortData($event)" matSortActive="id" matSortDirection="desc" matSortDisableClear>
                 <tr>
-                    <td>{{alerta.id}}</td>
-                    <td>{{alerta.equipamento.endereco.nome}}</td>
+                    <td>{{alerta.equipamento.nome}}</td>
+                    <td>{{alerta.data | date:"dd/MM/yyyy"}}</td>
+                    <td>{{alerta.hora}}</td>
+                    <td>
+                        <button class="button" pButton icon="pi pi-map-marker" pTooltip="Localizar" tooltipPosition="top" (click)="route()"></button>
+                    </td>
                 </tr>
             </ng-template>
         </p-table>
-        
     </div>
 </div>

@@ -35,8 +35,8 @@
     font-size: 15px;
     position: absolute;
     margin: 0;
-    margin-right: 600px;
-    margin-top: 80px;
+    margin-right: 700px;
+    margin-top: 90px;
 }
 
 .error-message-5 {
@@ -45,7 +45,7 @@
     font-size: 15px;
     position: absolute;
     margin: 0;
-    margin-left: 300px;
+    margin-left: -150px;
     margin-top: 50px;
 }
 
